@@ -1,8 +1,8 @@
-ini_set("rom_name",             "Radon");
-ini_set("rom_version",          "V6.3");
-ini_set("rom_author",           "Umang96");
+ini_set("rom_name",             "ViP3R");
+ini_set("rom_version",          "V1.0");
+ini_set("rom_author",           "IamCOD3X");
 ini_set("rom_device",           "Kenzo");
-ini_set("rom_date",             "February 04, 2018");
+ini_set("rom_date",             "February 07, 2023");
 
 ini_set("force_colorspace","rgba");
 #ini_set("dp","6");
@@ -10,12 +10,12 @@ ini_set("force_colorspace","rgba");
 fontresload( "0", "ttf/Roboto-Regular.ttf", "12" );
 fontresload( "1", "ttf/Roboto-Regular.ttf", "16" ); 
 
-splash(2000, "radonsplash");
+splash(2000, "VIPER");
 
 theme("default");
 
 viewbox(
-    "\nRadon Kernel",
+    "\nViP3R Kernel",
 
     "<@center><b>\n" + ini_get("rom_device") + "</b>\n\n</@>" +
     "\n\n\n\n  VERSION\t: <b><#selectbg_g>"+ini_get("rom_version")+"</#></b>\n" +
@@ -28,7 +28,7 @@ viewbox(
 
 alert(
   "NOTICE:",
-  "For best experience -\n\n1.Don't flash over other kernels. Ensure that you either have a previous version of Radon or the kernel that came with your rom.\n\n2.Do not use any scripts to tune cpu governors, this kernel already does that for your cpu.\n\n",
+  "For best experience -\n\n1.Don't flash over other kernels. Ensure that you either have a previous version of ViPER or the kernel that came with your rom.\n\n2.Do not use any scripts to tune cpu governors, this kernel already does that for your cpu.\n\n",
   "@warning",
   "OK"
 );
@@ -82,16 +82,16 @@ selectbox(
 setvar("retstatus",
 install(
   "\nInstalling",
-  "<@center>\nInstalling Radon Kernel\nPlease wait</@>",
+  "<@center>\nInstalling ViP3R Kernel\nPlease wait</@>",
   "")
 );
 
 viewbox(
-    "\n\n<@center>Try Radon Kernel Control</@>",
+    "\n\n<@center>Try ViP3R Kernel Control</@>",
 
-    "\n\nCustom profile based kernel manager\n\n\n\n\nConsider installing the radon kernel control app from play store if you like this kernel, it's a custom profile based kernel management app using which you can change kernel settings in one click.\n\nYou can switch between radon profiles and you can also make your own profiles if you want to change any settings manually like cpu, gpu frequency etc.\n\nI am always adding more features in the app to make experience better, please send me your suggestions if any.",
+    "\n\nCustom profile based kernel manager\n\n\n\n\nConsider installing the ViP3R kernel control app from play store if you like this kernel, it's a custom profile based kernel management app using which you can change kernel settings in one click.\n\nYou can switch between ViPE3R profiles and you can also make your own profiles if you want to change any settings manually like cpu, gpu frequency etc.\n\nI am always adding more features in the app to make experience better, please send me your suggestions if any.",
 
-    "@radonicon"
+    "@VIPERicon"
 );
 
 ini_set("text_next", "Finish");
