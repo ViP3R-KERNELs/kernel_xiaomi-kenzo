@@ -2304,20 +2304,19 @@ out:
 		if (udev->bus->is_b_host || old_otg)
 			udev->bus->quick_hnp = 1;
 	}
-
 	if (!is_targeted(udev)) {
-
-		otg_send_event(OTG_EVENT_DEV_NOT_SUPPORTED);
-
-		/* Maybe it can talk to us, though we can't talk to it.
-		 * (Includes HNP test device.)
-		 */
-		if (udev->bus->hnp_support) {
-			err = usb_port_suspend(udev, PMSG_SUSPEND);
-			if (err < 0)
-				dev_dbg(&udev->dev, "HNP fail, %d\n", err);
-		}
-		err = -ENOTSUPP;
+	    int event = OTG_EVENT_DEV_NOT_SUPPORTED;
+	    otg_send_event(&event);
+	    
+	    /* Maybe it can talk to us, though we can't talk to it.
+	     * (Includes HNP test device.)
+	     */
+	    if (udev->bus->hnp_support) {
+		err = usb_port_suspend(udev, PMSG_SUSPEND);
+		if (err < 0)
+		    dev_dbg(&udev->dev, "HNP fail, %d\n", err);
+	    }
+	    err = -ENOTSUPP;		
 	} else if (udev->bus->hnp_support &&
 		udev->portnum == udev->bus->otg_port) {
 		/* HNP polling is introduced in OTG supplement Rev 2.0
